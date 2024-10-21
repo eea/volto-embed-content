@@ -16,10 +16,19 @@
     "type": "git",
     "url": "git@github.com:eea/volto-embed-content.git"
   },
+  "addons": [
+    "@eeacms/volto-block-data-figure",
+    "@eeacms/volto-eea-map",
+    "@eeacms/volto-embed-static-content",
+    "@eeacms/volto-embed",
+    "@eeacms/volto-plotlycharts",
+    "@eeacms/volto-tableau"
+  ],
   "dependencies": {
     "@eeacms/volto-block-data-figure": "*",
     "@eeacms/volto-eea-map": "*",
     "@eeacms/volto-embed": "*",
+    "@eeacms/volto-embed-static-content": "*",
     "@eeacms/volto-plotlycharts": "*",
     "@eeacms/volto-tableau": "*"
   },
