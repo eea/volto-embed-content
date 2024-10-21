@@ -7,6 +7,8 @@ const _View = (props) => {
 
   const blockConfig = getBlockConfig(data);
 
+  const { urlFieldName } = blockConfig || {};
+
   if (!blockConfig) {
     return mode === 'edit' ? (
       <Message>No view configured for this content.</Message>
@@ -15,7 +17,12 @@ const _View = (props) => {
 
   const View = blockConfig.view;
 
-  return <View {...props} />;
+  return (
+    <View
+      {...props}
+      data={{ ...(props.data || {}), [urlFieldName]: data.url }}
+    />
+  );
 };
 
 export default _View;

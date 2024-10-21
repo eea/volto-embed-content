@@ -55,16 +55,13 @@ const Edit = (props) => {
   const blockConfig = useMemo(() => getBlockConfig(data), [data]);
 
   const schema = useMemo(() => {
-    const { urlFieldName } = blockConfig || {};
     let blockSchema = blockConfig?.schema || {};
     if (isFunction(blockSchema)) {
       blockSchema = blockSchema(props);
     }
     return {
       title: blockSchema.title || $schema.title,
-      fieldsets: mergeFieldsets($schema.fieldsets, blockSchema.fieldsets, [
-        urlFieldName,
-      ]),
+      fieldsets: mergeFieldsets($schema.fieldsets, blockSchema.fieldsets),
       properties: {
         ...(blockSchema.properties || {}),
         ...$schema.properties,
@@ -108,11 +105,8 @@ const Edit = (props) => {
                 [id]: value,
                 properties: pick(item, ['@id', '@type', 'UID']),
               };
-              const blockConfig = getBlockConfig(newData);
-              const { urlFieldName } = blockConfig || {};
               onChangeBlock(block, {
                 ...newData,
-                ...(urlFieldName ? { [urlFieldName]: value } : {}),
               });
             } catch (error) {
               toast.error(
