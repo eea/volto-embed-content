@@ -16,6 +16,13 @@
     "type": "git",
     "url": "git@github.com:eea/volto-embed-content.git"
   },
+  "dependencies": {
+    "@eeacms/volto-block-data-figure": "*",
+    "@eeacms/volto-eea-map": "*",
+    "@eeacms/volto-embed": "*",
+    "@eeacms/volto-plotlycharts": "*",
+    "@eeacms/volto-tableau": "*"
+  },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
