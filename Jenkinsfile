@@ -7,14 +7,14 @@ pipeline {
   }
 
   environment {
-    GIT_NAME = "volto-addon-template"
+    GIT_NAME = "volto-embed-content"
     NAMESPACE = "@eeacms"
     SONARQUBE_TAGS = "volto.eea.europa.eu"
     DEPENDENCIES = ""
     BACKEND_PROFILES = "eea.kitkat:testing"
     BACKEND_ADDONS = ""
     VOLTO = "17"
-    VOLTO16_BREAKING_CHANGES = "no"
+    VOLTO16_BREAKING_CHANGES = "yes"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 
@@ -413,4 +413,5 @@ pipeline {
     }
   }
 }
+
 
