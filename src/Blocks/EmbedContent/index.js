@@ -69,6 +69,10 @@ const config = (config) => {
           view: EmbedStaticContentView,
           schema: schemaEmbedStaticContentView,
         },
+        Image: {
+          view: EmbedStaticContentView,
+          schema: schemaEmbedStaticContentView,
+        },
       },
       url: {
         external: {
