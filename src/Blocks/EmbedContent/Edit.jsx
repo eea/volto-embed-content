@@ -55,13 +55,16 @@ const Edit = (props) => {
   const blockConfig = useMemo(() => getBlockConfig(data), [data]);
 
   const schema = useMemo(() => {
+    const { urlFieldName } = blockConfig || {};
     let blockSchema = blockConfig?.schema || {};
     if (isFunction(blockSchema)) {
       blockSchema = blockSchema(props);
     }
     return {
       title: blockSchema.title || $schema.title,
-      fieldsets: mergeFieldsets($schema.fieldsets, blockSchema.fieldsets),
+      fieldsets: mergeFieldsets($schema.fieldsets, blockSchema.fieldsets, [
+        urlFieldName,
+      ]),
       properties: {
         ...(blockSchema.properties || {}),
         ...$schema.properties,
