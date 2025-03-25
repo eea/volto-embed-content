@@ -41,7 +41,7 @@ const config = (config) => {
         visualization: {
           view: EmbedVisualizationView,
           schema: schemaEmbedVisualization,
-          urlFieldName: 'vis_url',
+          urlFieldName: 'viz_url',
         },
         map_visualization: {
           view: EmbedEEAMapView,
