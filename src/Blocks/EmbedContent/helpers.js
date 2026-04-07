@@ -1,5 +1,5 @@
 import config from '@plone/volto/registry';
-import { isInternalURL } from '@plone/volto/helpers';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
 const getBlockConfigByType = (type) =>
   config.blocks.blocksConfig.embed_content.blocksConfig.type[type];
