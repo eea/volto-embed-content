@@ -2,10 +2,14 @@ import React, { useMemo } from 'react';
 import { compose } from 'redux';
 import { injectIntl } from 'react-intl';
 import { Message } from 'semantic-ui-react';
-import { uniq, pick, isFunction } from 'lodash';
+import uniq from 'lodash/uniq';
+import pick from 'lodash/pick';
+import isFunction from 'lodash/isFunction';
 import { toast } from 'react-toastify';
-import { SidebarPortal, BlockDataForm, Toast } from '@plone/volto/components';
-import { Api } from '@plone/volto/helpers';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
+import Api from '@plone/volto/helpers/Api/Api';
 
 import View from './View';
 import { getBlockConfig } from './helpers';

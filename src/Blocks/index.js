@@ -1,4 +1,4 @@
-import { uniqBy } from 'lodash';
+import uniqBy from 'lodash/uniqBy';
 import installEmbedContent from './EmbedContent';
 
 const config = (config) => {
