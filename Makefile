@@ -147,7 +147,9 @@ start-ci:		## Start frontend in production mode (used by CI)
 	cp core/packages/volto/babel.config.js core/packages/volto/babel.config.js.orig
 	trap 'mv -f core/packages/volto/babel.config.js.orig core/packages/volto/babel.config.js' EXIT
 	cp .coverage.babel.config.js core/packages/volto/babel.config.js
-	pnpm build
+	# The Volto 18 server build of this add-on (plotly, tableau, map deps)
+	# OOMs the default Node worker heap on CI; give it more room.
+	NODE_OPTIONS=--max-old-space-size=4096 pnpm build
 	pnpm start:prod
 
 .PHONY: check-ci
