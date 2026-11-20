@@ -238,6 +238,9 @@ Cypress.Commands.add('removeContent', (path) => {
       },
       auth: auth,
       body: {},
+      // Cleanup only: the content may already be gone (e.g. the previous
+      // test removed it), a 404 is fine.
+      failOnStatusCode: false,
     })
     .then(() => console.log(`${path} removed`));
 });
