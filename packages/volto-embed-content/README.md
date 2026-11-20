@@ -6,6 +6,19 @@
 
 [Volto](https://github.com/plone/volto) add-on
 
+## Upgrade
+
+### Upgrading to 2.x
+
+> This version requires `Volto 18` or `Volto 19` and Node.js 22.
+
+The sources are unchanged beyond the layout move: the block ids, the schema fields and the six `*` dependencies are the same, so nothing needs to change on a site. The published package now lives in `packages/volto-embed-content`.
+
+#### Breaking changes
+
+- **Node.js 22 or newer is required** (`engines.node >= 22`).
+- **React 18 is required.** The package declares `react` and `react-dom` as `^18.2.0` peers.
+
 ## Features
 
 Demo GIF
